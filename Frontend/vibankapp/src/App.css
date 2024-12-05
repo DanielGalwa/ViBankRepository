@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.divider {
+  border: none; 
+  height: 2px; 
+  background-color: #ccc; 
+  margin: 0; 
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;  
+}
+.content {
+  flex: 1;
+}
+.footer {
+  height:3vh;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+}

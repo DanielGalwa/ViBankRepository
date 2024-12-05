@@ -1,0 +1,22 @@
+.button-container-2fa {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    transform: translateY(-50%);
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.inputs-2fa {
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

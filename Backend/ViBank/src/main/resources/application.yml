@@ -1,0 +1,26 @@
+spring:
+  mail:
+    username: #Enter your email here
+    password: #Enter password to your email here
+  datasource:
+    #1. Create database using command "create database <name>" in MySQL Workbench (e.g. create database vi_bank_db)
+    #2. "jdbc:mysql://localhost:3306/<name of created database>"
+    url: jdbc:mysql://localhost:3306/vi_bank_db
+    username: root #Username for MySQL
+    password: admin #Password for MySQL
+  jpa:
+    hibernate:
+      ddl-auto: update #Will create all required tables in database
+
+app:
+  storage:
+    location: ./uploads/
+
+jwt:
+  secret: 8lvXAuvdEnzx+/1vz7IftDgtrq5bo9Vy6MxIUgqvxwc=
+  cookie-name: "JWTcookie"
+
+csrf:
+  cookie-name: "CSRFcookie"
+
+

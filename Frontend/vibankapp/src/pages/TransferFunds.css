@@ -1,0 +1,57 @@
+.transferContainer {
+    background-color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Wyśrodkowanie formularza w kontenerze */
+}
+
+.transferContainer button{
+    align-self: center;
+    width: 100%;
+}
+.transfer-page{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.padding-header-transaction{
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.input-transfer{
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 100%;
+}
+.main-content-transaction{
+    padding: 0 5%;
+    background-color: #f3f4f6;
+    flex-grow: 1;
+    min-height: 84vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* Ustawia elementy jeden pod drugim */
+    margin-bottom: 15px; /* Dodaje odstęp pomiędzy grupami */
+}
+
+.input-group label {
+    margin-bottom: 5px; /* Dodaje odstęp pomiędzy etykietą a polem input */
+    font-weight: bold; /* Opcjonalnie możesz zwiększyć wagę tekstu dla czytelności */
+}

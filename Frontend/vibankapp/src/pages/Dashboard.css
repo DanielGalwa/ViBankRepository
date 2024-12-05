@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* main content */
+.main-content-dashboard{
+    display: flex;
+    padding: 0 5%;
+    background-color: #f3f4f6;
+    flex-grow: 1;
+    min-height: 84vh; 
+}
+/* container with header(everything) */
+.container-dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Cała wysokość widoku */
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+.btn-primary {
+    min-width: 120px;
+    display: inline-block;
+    align-items: center; 
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    background-color: #007bff; 
+    border: 1px solid transparent; 
+    border-radius: 25px; 
+    padding: 0.375rem 0.75rem; 
+    font-size: 14px; 
+    line-height: 1.5; 
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Przejrzystość */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; 
+    border-color: #004085; 
+    text-decoration: none; 
+}
+
+.btn-primary:focus, .btn-primary.focus {
+    outline: 0; 
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); 
+}
+
+.btn-primary:disabled, .btn-primary.disabled {
+    opacity: 0.65; 
+    pointer-events: none; 
+}
+a {
+    text-decoration: none; 
+}
+
+a:hover {
+    text-decoration: none;
+}
+/* sides of page */
+.left-side{
+    margin-top: 10px;
+    width: 50%;
+    
+}
+.right-side{
+    /* text-align: center; */
+    width: 50%;
+}
+.centered-header{
+    text-align: center;
+}
+/* card(accounts) */
+.card{
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    /* background-color: #f9f9f9; */
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.account-info {
+    text-align: left;
+}
+  
+.account-balance {
+    text-align: right;
+}
+
+/* history */
+.history-container{
+    background-color: #ffffff;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+
+    /*scroll gdy trzeba*/
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background-color: #ffffff;
+}
+
+.green-arrow {
+    color: green;
+}
+
+.red-arrow {
+    color: red;
+}
+
+.transaction-amount {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.transaction-amount p {
+    margin: 0;
+    color: #000;
+}
+
+.transaction-info {
+    display: flex;
+    align-items: center;
+}
+
+.transaction-info p {
+    margin-left: 10px;
+    font-size: 14px;
+}
+.icon {
+    font-size: 18px;
+}
+.padding-header{
+    padding-bottom: 10px;
+}
+.history-link {
+    float: right;
+    color: red;
+    text-decoration: none;
+    font-size: 12px;
+    margin-top: -30px;
+    margin-right: 20px;
+}
+
+.section-date {
+    font-weight: bold;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px; /* Odległość między przyciskami */
+    margin-top: 10px; /* Odstęp od reszty */
+}
+/* Styl dla przycisku "Wyświetl transakcje" - outline w kolorze niebieskim */
+.btn-outline-primary {
+    display: flex; 
+    align-items: center; 
+    font-weight: 400;
+    color: #007bff; /* Niebieski tekst */
+    text-align: center;
+    text-decoration: none; 
+    background-color: transparent; /* Przezroczyste tło */
+    border: 1px solid #007bff; /* Niebieska ramka */
+    border-radius: 25px; /* Zaokrąglone rogi */
+    padding: 0.375rem 0.75rem;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Animacje */
+}
+
+.btn-outline-primary:hover {
+    color: #fff; /* Zmiana koloru tekstu na biały przy najechaniu */
+    background-color: #007bff; /* Wypełnienie niebieskim */
+    border-color: #007bff; /* Zmiana koloru obramowania */
+}
+
+.btn-outline-primary:focus, .btn-outline-primary.focus {
+    outline: 0; 
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); /* Niebieski cień */
+}
+
+.btn-outline-primary:disabled, .btn-outline-primary.disabled {
+    opacity: 0.65; 
+    pointer-events: none; 
+}

@@ -1,0 +1,16 @@
+.container-home {
+    display: flex;
+    justify-content: center; /* Wycentruje poziomo */
+    align-items: center; /* Wycentruje pionowo */
+    padding: 0 5%;
+    background-color: #f3f4f6;
+    flex-grow: 1;
+    min-height: 84vh;
+    font-family: 'Open Sans', sans-serif; /* Ustawia czcionkę */
+}
+
+.welcome-text {
+    font-size: 2rem;
+    font-weight: 600; /* Pogrubienie */
+    color: #333; /* Kolor tekstu */
+}

@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    height:12vh;
+    color: #333;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+}
+.logo {
+    width: 100px;
+}
+.btn-outline-danger {
+    display: flex; 
+    align-items: center; 
+    font-weight: 400;
+    color: #dc3545; 
+    text-align: center;
+    text-decoration: none; 
+    background-color: transparent; 
+    border: 1px solid #dc3545;
+    border-radius: 25px;
+    padding: 0.375rem 0.75rem;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Przejrzystość */
+}
+
+.btn-outline-danger:hover {
+    color: #fff; 
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-outline-danger:focus, .btn-outline-danger.focus {
+    outline: 0; 
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5); /* Cień */
+}
+
+.btn-outline-danger:disabled, .btn-outline-danger.disabled {
+    opacity: 0.65; 
+    pointer-events: none; 
+}
