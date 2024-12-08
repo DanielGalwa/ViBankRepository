@@ -5,6 +5,10 @@ This application is a secure online banking platform that allows users to manage
 - [Technologies](#Technologies)
 - [Setup](#Setup)
 - [Global Architecture](#Global-Architecture)
+- [List of Security Features](#List-of-Security-Features)
+- [Design](#Design)
+- [API](#API)
+- [Spring Security](#Spring-Security)
 
 # Technologies
 - **Spring Boot**: 3.3.2 version
@@ -12,6 +16,7 @@ This application is a secure online banking platform that allows users to manage
 - **React**: 18.3.1 version
 - **Java**: 17 version
 - **MySQL**: 8.0.39 version
+
 # Setup
 
 # Global Architecture
