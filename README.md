@@ -7,8 +7,8 @@ This application is a secure online banking platform that allows users to manage
 - [Global Architecture](#Global-Architecture)
 - [List of Security Features](#List-of-Security-Features)
 - [Design](#Design)
-- [API](#API)
 - [Spring Security](#Spring-Security)
+- [API](#API)
 
 # Technologies
 - **Spring Boot**: 3.3.2 version
@@ -45,4 +45,25 @@ This application is a secure online banking platform that allows users to manage
 <div style="height: 20px;"></div> 
 <div align="center">
   <img src="design2.png" alt="Design logging view" />
+</div>
+
+# Spring Security
+## First-level authentication scheme
+<div align="center">
+  <img src="first.png" alt="First-level authentication scheme" />
+</div>
+
+## Second-level authentication scheme
+<div align="center">
+  <img src="second.png" alt="Second-level authentication scheme" />
+</div>
+
+## Authorization scheme for users with a valid JWT token
+<div align="center">
+  <img src="auth_check.png" alt="Authorization scheme for users with a valid JWT token" />
+</div>
+
+## CSRF token validation process
+<div align="center">
+  <img src="csrf.png" alt="CSRF token validation process" />
 </div>
