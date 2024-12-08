@@ -11,8 +11,7 @@ This application is a secure online banking platform that allows users to manage
 - **Spring Security**: 6.1.2 version
 - **React**: 18.3.1 version
 - **Java**: 17 version
-- **MySQL**: used RDBMS
-
+- **MySQL**: 8.0.39
 # Setup
 
 # Global Architecture
