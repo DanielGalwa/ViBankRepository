@@ -42,7 +42,7 @@ This application is a secure online banking platform that allows users to manage
 <div align="center">
   <img src="design.png" alt="Design dashboard view" />
 </div>
-<br >
+
 <div align="center">
   <img src="design2.png" alt="Design logging view" />
 </div>
