@@ -15,4 +15,6 @@ This application is a secure online banking platform that allows users to manage
 # Setup
 
 # Global Architecture
-![Architecture Diagram](architecture.png)
+<div align="center">
+  <img src="architecture.png" alt="Architecture Diagram" />
+</div>
