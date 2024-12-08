@@ -136,7 +136,7 @@ This application is a secure online banking platform that allows users to manage
     - **Description:** Logs out the authenticated user by invalidating their JWT token.
     - **JWT Token:** Required
     - **CSRF Token in "X-CSRF-Token" header:** Required    
-    - **Admin Privileges Required:** False '
+    - **Admin Privileges Required:** False 
     
     _No request body._
     
