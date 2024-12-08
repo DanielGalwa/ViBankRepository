@@ -19,6 +19,53 @@ This application is a secure online banking platform that allows users to manage
 
 # Setup
 
+To run the application, follow these steps:
+
+1. **Backend**:
+   - Navigate to the backend directory:
+     ```bash
+     cd backend
+     ```
+   - Install dependencies and build the project:
+     ```bash
+     mvn clean install
+     ```
+   - Configure the `application.properties` file:
+     ```properties
+     spring.datasource.url=jdbc:mysql://localhost:3306/vibank
+     spring.datasource.username=your_db_user
+     spring.datasource.password=your_db_password
+     jwt.secret=your_secret_key
+     app.storage.location=/path/to/storage
+     spring.jpa.hibernate.ddl-auto=update
+     ```
+     > **Note**: The `spring.jpa.hibernate.ddl-auto=update` setting ensures that all required tables will be automatically created in the database when the application starts.
+   - Initialize the database by creating the `vibank` schema in MySQL (without any tables, as they will be created automatically).
+   - Start the application:
+     ```bash
+     mvn spring-boot:run
+     ```
+
+2. **Frontend**:
+   - Navigate to the frontend directory:
+     ```bash
+     cd frontend
+     ```
+   - Install dependencies:
+     ```bash
+     npm install
+     ```
+
+   - Start the application:
+     ```bash
+     npm start
+     ```
+
+3. **Ready**:
+   - The backend will be available at: `http://localhost:8080`
+   - The frontend will be available at: `http://localhost:3000`
+
+
 # Global Architecture
 <div align="center">
   <img src="architecture.png" alt="Architecture Diagram" />
@@ -136,7 +183,7 @@ This application is a secure online banking platform that allows users to manage
     - **Description:** Logs out the authenticated user by invalidating their JWT token.
     - **JWT Token:** Required
     - **CSRF Token in "X-CSRF-Token" header:** Required    
-    - **Admin Privileges Required:** False 
+    - **Admin Privileges Required:** False '
     
     _No request body._
     
