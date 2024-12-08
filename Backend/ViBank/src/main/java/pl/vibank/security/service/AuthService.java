@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import pl.vibank.model.exception.UserBlockedException;
 import pl.vibank.security.model.dto.LoginDTO;
 import pl.vibank.security.model.enums.Role;
 
@@ -58,7 +59,10 @@ public class AuthService {
                 if(!(e.getCause() instanceof UsernameNotFoundException)) {
                     jpaUserDetailsService.increaseTries(loginDTO.getPid());
                 }
-                throw new BadCredentialsException(e.getMessage());
+                if(e.getCause() instanceof UserBlockedException) {
+                    throw new BadCredentialsException(e.getMessage());
+                }
+                throw new BadCredentialsException("Błędny identyfikator lub hasło");
             }
             jpaUserDetailsService.restartTries(loginDTO.getPid());
 
@@ -86,7 +90,7 @@ public class AuthService {
     }
 
     private void checkIfCookieAlreadyExist(HttpServletRequest request){
-        Optional<Cookie> jwtCookie = cookieService.getJwtCookie(request,JWT_COOKIE_NAME);
+        Optional<Cookie> jwtCookie = cookieService.getCookie(request,JWT_COOKIE_NAME);
         if(jwtCookie.isPresent()){
             String token = jwtCookie.get().getValue();
             if(jwtsService.ifFirstPhaseCompletedReturnClaims(token).isPresent()){

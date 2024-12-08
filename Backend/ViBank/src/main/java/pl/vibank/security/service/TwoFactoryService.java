@@ -6,14 +6,12 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseCookie;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Service;
 import pl.vibank.security.model.dto.TwoFactoryAuthDTO;
 
-import java.security.SecureRandom;
 import java.util.Date;
 import java.util.Optional;
 
@@ -34,7 +32,7 @@ public class TwoFactoryService {
 
     public String authenticate(TwoFactoryAuthDTO twoFactoryAuthDTO, HttpServletRequest request, HttpServletResponse response) {
 
-        Optional<Cookie> jwtCookie = cookieService.getJwtCookie(request,JWT_COOKIE_NAME);
+        Optional<Cookie> jwtCookie = cookieService.getCookie(request,JWT_COOKIE_NAME);
         if(jwtCookie.isPresent()){
             String token = jwtCookie.get().getValue();
 

@@ -58,8 +58,8 @@ public class CsrfFilter extends OncePerRequestFilter {
         //to sie wykona tylko dla autoryzowanych!
         String csrfTokenFromHeader = request.getHeader("X-CSRF-Token");
         if(csrfTokenFromHeader != null) {
-            Optional<Cookie> jwtCookie = cookieService.getJwtCookie(request,JWT_COOKIE_NAME);
-            Optional<Cookie> csrfCookie = cookieService.getJwtCookie(request,CSRF_COOKIE_NAME);
+            Optional<Cookie> jwtCookie = cookieService.getCookie(request,JWT_COOKIE_NAME);
+            Optional<Cookie> csrfCookie = cookieService.getCookie(request,CSRF_COOKIE_NAME);
             if(jwtCookie.isPresent() &&  csrfCookie.isPresent()) {
                 String jwtToken = jwtCookie.get().getValue();
                 Claims claimsFromToken = jwtsService.getClaimsFromToken(jwtToken);

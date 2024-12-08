@@ -49,7 +49,7 @@ public class JwtFilter extends OncePerRequestFilter {
         //1.
         if (SecurityContextHolder.getContext().getAuthentication() == null) {
             //2.
-            Optional<Cookie> jwtCookie = cookieService.getJwtCookie(request,JWT_COOKIE_NAME);
+            Optional<Cookie> jwtCookie = cookieService.getCookie(request,JWT_COOKIE_NAME);
 
             //3.
             if (jwtCookie.isEmpty()) {

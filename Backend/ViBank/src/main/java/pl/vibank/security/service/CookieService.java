@@ -2,7 +2,6 @@ package pl.vibank.security.service;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseCookie;
 import org.springframework.stereotype.Service;
@@ -26,21 +25,20 @@ public class CookieService {
         this.JWT_COOKIE_NAME = jwtCookieName;
     }
 
-    public Optional<Cookie> getJwtCookie(HttpServletRequest request, String nameOfCookie) {
+    public Optional<Cookie> getCookie(HttpServletRequest request, String nameOfCookie) {
 
         Cookie[] cookies = request.getCookies();
         if (cookies == null) {
            return Optional.empty();
         }
 
-        //"JWTcookie"
 
-        Cookie jwtCookie = Arrays.stream(cookies)
+        Cookie definedCookie = Arrays.stream(cookies)
                 .filter(cookie -> nameOfCookie.equals(cookie.getName()))
                 .findFirst()
                 .orElse(null);
 
-        return Optional.ofNullable(jwtCookie);
+        return Optional.ofNullable(definedCookie);
     }
 
     public ResponseCookie generateCookieFromToken(String token, Date date) {

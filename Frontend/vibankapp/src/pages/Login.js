@@ -25,8 +25,9 @@ function Login() {
             });
             navigate("/twofactoryauth");
           } catch (error) {
-            if (error.response.status === 401) {
-              alert("Niepoprawnie uzupełniony formularz");
+            console.log(error.response);
+            if (error.response && error.response.status === 403) {
+              alert(error.response.data);
             }
           }
         };
