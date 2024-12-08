@@ -83,6 +83,9 @@ This application is a secure online banking platform that allows users to manage
 1. `/auth/login`
     - **Method:** `POST`
     - **Description:** Authenticates a user with their PID and password. Initiates the first phase of authentication by issuing a JWT token and sending a 2FA code to the user's email.
+    - **JWT Token:** Not Required
+    - **CSRF Token in "X-CSRF-Token" header:** Not Required
+    - **Admin Privileges Required:** False 
     
     ```json
     {
@@ -106,6 +109,9 @@ This application is a secure online banking platform that allows users to manage
 2. `/auth/2fa`
     - **Method:** `POST`
     - **Description:** Completes the authentication process by verifying the 2FA code sent to the user's email.
+    - **JWT Token:** "temporary" JWT token Required
+    - **CSRF Token in X-CSRF-Token header:** Not Required
+    - **Admin Privileges Required:** False 
     
     ```json
     {
@@ -128,6 +134,9 @@ This application is a secure online banking platform that allows users to manage
 3. `/auth/logout`
     - **Method:** `POST`
     - **Description:** Logs out the authenticated user by invalidating their JWT token.
+    - **JWT Token:** Required
+    - **CSRF Token in "X-CSRF-Token" header:** Required    
+    - **Admin Privileges Required:** False '
     
     _No request body._
     
@@ -146,6 +155,9 @@ This application is a secure online banking platform that allows users to manage
 4. `/auth/create-user`
     - **Method:** `POST`
     - **Description:** Creates a new user account.
+    - **JWT Token:** Required
+    - **CSRF Token in "X-CSRF-Token" header:** Required      
+    - **Admin Privileges Required:** True 
     
     ```json
     {
@@ -173,7 +185,10 @@ This application is a secure online banking platform that allows users to manage
 5. `/auth/restart-tries`
     - **Method:** `POST`
     - **Description:** Resets the failed login attempts counter for a user.
-    
+    - **JWT Token:** Required
+    - **CSRF Token in "X-CSRF-Token" header:** Required   
+    - **Admin Privileges Required:** True 
+     
     ```json
     {
       "pid": "12345678"
@@ -197,7 +212,10 @@ This application is a secure online banking platform that allows users to manage
 1. `/accounts/`
     - **Method:** `GET`
     - **Description:** Retrieves all accounts associated with the authenticated user.
-    
+    - **JWT Token:** Required
+    - **CSRF Token in "X-CSRF-Token" header:** Required   
+    - **Admin Privileges Required:** False 
+      
     **Successful Response (200 OK):**
     
     ```json
@@ -222,6 +240,9 @@ This application is a secure online banking platform that allows users to manage
 2. `/accounts/`
     - **Method:** `POST`
     - **Description:** Creates a new bank account for the authenticated user.
+    - **JWT Token:** Required
+    - **CSRF Token in "X-CSRF-Token" header:** Required
+    - **Admin Privileges Required:** True 
     
     **Request Body:**
     
@@ -247,7 +268,10 @@ This application is a secure online banking platform that allows users to manage
 1. `/transactions`
     - **Method:** `GET`
     - **Description:** Retrieves a paginated list of transactions for a specific account belonging to the authenticated user.
-    
+    - **JWT Token:** Required
+    - **CSRF Token in "X-CSRF-Token" header:** Required   
+    - **Admin Privileges Required:** False 
+     
     **Query Parameters:**
     
     - `accountNumber` (required): `string` — The account number to fetch transactions for.
@@ -315,7 +339,10 @@ This application is a secure online banking platform that allows users to manage
 2. `/transactions/`
     - **Method:** `POST`
     - **Description:** Initiates a new transaction from the authenticated user's account to another account.
-    
+    - **JWT Token:** Required
+    - **CSRF Token in "X-CSRF-Token" header:** Required
+    - **Admin Privileges Required:** False 
+     
     **Request Body:**
     
     ```json
@@ -357,7 +384,10 @@ This application is a secure online banking platform that allows users to manage
 1. `/photos/{name}`
     - **Method:** `GET`
     - **Description:** Retrieves an image file by its name.
-    
+    - **JWT Token:** Not Required
+    - **CSRF Token in "X-CSRF-Token" header:** Not Required
+    - **Admin Privileges Required:** False 
+     
     **Example Request URL:**
     
     ```
