@@ -302,15 +302,15 @@ This application is a secure online banking platform that allows users to manage
     
      **403 Forbidden:**
     
-        ```json
+
         "Nie jesteś właścicielem tego rachunku"
-        ```
+
     
      **400 Bad Request:**
     
-        ```json
+
         "Numer strony oraz jej rozmiar musi być liczbą całkowitą"
-        ```
+
 
 2. `/transactions/`
     - **Method:** `POST`
@@ -338,21 +338,20 @@ This application is a secure online banking platform that allows users to manage
     
      **403 Forbidden:**
     
-        ```json
+        
         "Nie jesteś właścicielem tego rachunku"
-        ```
+
     
      **400 Bad Request:**
     
-        ```json
+
         "Niewystarczająco środków na koncie"
-        ```
+
     
      **404 Not Found:**
     
-        ```json
         "Nieznaleziono podanego numeru rachunku"
-        ```
+
 ## /photos
 
 1. `/photos/{name}`
