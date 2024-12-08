@@ -1,9 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home'
-import Offer from './pages/Offer'
 import Login from './pages/Login'
-import Test from './pages/Test'
 import NotFound from './pages/NotFound';
 import Logout from './pages/Logout'; 
 import Dashboard from './pages/Dashboard';
@@ -26,8 +24,6 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />}/>
                 <Route path="/history" element={<History />}/>
                 <Route path="/transferFunds" element={<TransferFunds />}/>
-                <Route path="/offer" element={<Offer />} />
-                <Route path="/test" element={<Test />} />
                 <Route path="/twofactoryauth" element={<TwoFactoryAuth />}/>
                 <Route
                         path="*"
