@@ -3,3 +3,16 @@ This application is a secure online banking platform that allows users to manage
 
 ## Table of Contents
 - [Technologies](#Technologies)
+- [Setup](#Setup)
+- [Architecture](#GlobalArchitecture)
+
+# Technologies
+- **Spring Boot**: 3.3.2 version
+- **React**: 18.3.1 version
+- **Java**: 17 version
+- **MySQL**: used RDBMS
+
+# Setup
+
+# Global Architecture
+
