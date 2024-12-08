@@ -48,14 +48,12 @@ public class CsrfFilter extends OncePerRequestFilter {
             return;
         }
 
-        //przed zalogowaniem
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if(authentication == null || !authentication.isAuthenticated()) {
             filterChain.doFilter(request, response);
             return;
         }
 
-        //to sie wykona tylko dla autoryzowanych!
         String csrfTokenFromHeader = request.getHeader("X-CSRF-Token");
         if(csrfTokenFromHeader != null) {
             Optional<Cookie> jwtCookie = cookieService.getCookie(request,JWT_COOKIE_NAME);

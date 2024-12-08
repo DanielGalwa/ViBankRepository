@@ -26,13 +26,9 @@ public class ProjectSecurityConfig {
         http.cors(c -> {
             CorsConfigurationSource source = request -> {
                 CorsConfiguration config = new CorsConfiguration();
-                //Nagłówek: Access-Control-Allow-Origin
                 config.setAllowedOrigins(List.of("http://localhost:3000"));
-                //Nagłówek: Access-Control-Allow-Methods
                 config.setAllowedMethods(List.of("GET", "POST", "OPTIONS"));
-                //Nagłówek: Access-Control-Allow-Headers
                 config.setAllowedHeaders(List.of("*"));
-                //Nagłówek: Access-Control-Allow-Credentials
                 config.setAllowCredentials(true);
                 return config;
             };
@@ -56,17 +52,11 @@ public class ProjectSecurityConfig {
                             .anyRequest().denyAll();//7.
                 }
         );
-        //Filtr uwierzytelniania
+
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
-        //Filtr zabezpieczeń przeciwko CSRF
         http.addFilterAfter(csrfFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
 
 }
-
-//config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-
-// request.requestMatchers("/test/**").authenticated();
-//https://stackoverflow.com/questions/59302026/spring-security-why-adding-the-jwt-filter-before-usernamepasswordauthenticatio

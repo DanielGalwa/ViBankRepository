@@ -31,7 +31,6 @@ public class AccountService {
     private JpaUserDetailsService jpaUserDetailsService;
     private final SecureRandom secureRandom;
 
-    //poniewaz getUserAccounts zwraca DTO
     public boolean isAccountOwner(Authentication authentication, String senderAccountNumber) {
         Optional<Account> account = accountRepository.findByAccountNumber(senderAccountNumber);
         List<Account> userAccounts =
@@ -82,14 +81,6 @@ public class AccountService {
         }else{
             senderAccount.setBalance(senderBalance.subtract(transaction.getAmount()));
             recipientAccount.setBalance(recipientBalance.add(transaction.getAmount()));
-        }
-    }
-
-    public boolean isAccountNumberExists(String accountNumber) {
-        if(accountRepository.findByAccountNumber(accountNumber).isPresent()) {
-            return true;
-        }else{
-            return false;
         }
     }
 

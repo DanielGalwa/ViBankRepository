@@ -13,20 +13,18 @@ import pl.vibank.model.entity.User;
 import pl.vibank.security.model.enums.Role;
 import pl.vibank.model.repository.UserRepository;
 import pl.vibank.security.model.entity.CustomUserDetails;
-
 import java.security.SecureRandom;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @AllArgsConstructor
 @Service
 public class JpaUserDetailsService implements UserDetailsService {
-    private final UserRepository userRepository;     //1.
-    private final SecureRandom secureRandom;         //2.
-    private final PasswordEncoder passwordEncoder;   //3.
+    private final UserRepository userRepository;
+    private final SecureRandom secureRandom;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
-    public CustomUserDetails loadUserByUsername(String pid) { //4.
+    public CustomUserDetails loadUserByUsername(String pid) {
         Optional<User> user = userRepository.findByPid(pid);
         if(user.isEmpty()){
             throw new UsernameNotFoundException("Błędny identyfikator lub hasło");
@@ -41,7 +39,7 @@ public class JpaUserDetailsService implements UserDetailsService {
     public Role getUserRole(String pid) {
         User user = loadUserByUsername(pid).getUser();
         return user.getRole();
-    }  //5.
+    }
 
     @Transactional
     public String create(CreateUserDTO request) {
@@ -71,7 +69,7 @@ public class JpaUserDetailsService implements UserDetailsService {
         } catch (Exception e) {
             throw new IllegalArgumentException("Wprowadzono niepoprawne dane użytkownika:", e);
         }
-    } //6.
+    }
 
     private String generatePid() {
         String pid;
@@ -87,7 +85,7 @@ public class JpaUserDetailsService implements UserDetailsService {
         }while(userRepository.findByPid(pid).isPresent());
 
         return pid;
-    }  //7.
+    }
 
     @Transactional
     public void increaseTries(String pid) {
@@ -95,7 +93,7 @@ public class JpaUserDetailsService implements UserDetailsService {
         int tries = user.getTries();
         user.setTries(tries + 1);
         userRepository.save(user);
-    } //8.
+    }
 
     @Transactional
     public void restartTries(String pid) {
@@ -105,5 +103,5 @@ public class JpaUserDetailsService implements UserDetailsService {
             user.setTries(0);
             userRepository.save(user);
         }
-    } //9.
+    }
 }

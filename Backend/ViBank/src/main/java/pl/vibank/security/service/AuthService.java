@@ -74,7 +74,7 @@ public class AuthService {
                     .claim("role", userRole.toString())
                     .claim("2fa",false)
                     .setIssuedAt(new Date(System.currentTimeMillis()))
-                    .setExpiration(date)//3 minuty
+                    .setExpiration(date)//3 min
                     .signWith(jwtsService.getKey(), SignatureAlgorithm.HS256)
                     .compact();
 
@@ -104,7 +104,7 @@ public class AuthService {
             Date date = new Date(System.currentTimeMillis());
             String token = Jwts.builder()
                     .setIssuedAt(date)
-                    .setExpiration(date) //0 sekund
+                    .setExpiration(date) //0 sec
                     .signWith(jwtsService.getKey(), SignatureAlgorithm.HS256)
                     .compact();
 

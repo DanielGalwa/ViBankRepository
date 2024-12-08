@@ -22,22 +22,3 @@ public class BeansConfiguration {
         return new SecureRandom();
     }
 }
-//
-//    @Autowired
-//    public AuthenticationConfiguration authenticationConfiguration;
-//
-
-//    @Bean
-//public AuthenticationManager authenticationManager() throws Exception {
-//    AuthenticationManager authenticationManager = authenticationConfiguration.getAuthenticationManager();
-//
-//    if (authenticationManager instanceof ProviderManager providerManager) {
-//        List<AuthenticationProvider> providers = providerManager.getProviders();
-//        System.out.println("=== Zarejestrowane Authentication Providers ===");
-//        providers.forEach(provider -> System.out.println(provider.getClass().getName()));
-//    } else {
-//        System.out.println("AuthenticationManager nie jest instancją ProviderManager.");
-//    }
-//
-//    return authenticationManager;
-//}

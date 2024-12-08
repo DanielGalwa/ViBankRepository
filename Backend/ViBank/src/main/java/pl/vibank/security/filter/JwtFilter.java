@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-//https://www.youtube.com/watch?v=BVdQ3iuovg0&t=5033s
+
 @Component
 public class JwtFilter extends OncePerRequestFilter {
 
@@ -46,26 +46,24 @@ public class JwtFilter extends OncePerRequestFilter {
     protected void doFilterInternal(@NonNull HttpServletRequest request,
                                     @NonNull HttpServletResponse response,
                                     @NonNull FilterChain filterChain) throws ServletException, IOException {
-        //1.
+
         if (SecurityContextHolder.getContext().getAuthentication() == null) {
-            //2.
+
             Optional<Cookie> jwtCookie = cookieService.getCookie(request,JWT_COOKIE_NAME);
 
-            //3.
             if (jwtCookie.isEmpty()) {
                 filterChain.doFilter(request, response);
                 return;
             }
             String jwt = jwtCookie.get().getValue();
 
-            //4.
             Optional<Claims> claimsFormRequest = jwtsService.ifFirstPhaseCompletedReturnClaims(jwt);
             if(claimsFormRequest.isPresent()) {
                 Claims claims = claimsFormRequest.get();
                 String pid = claims.getSubject();
                 String role = jwtsService.getClaimsFromToken(jwt).get("role", String.class);
                 CustomUserDetails customUserDetails = jpaUserDetailsService.loadUserByUsername(pid);
-                //5.
+
                 if(claims.get("2fa", Boolean.class)){
                     var authentication =
                             new UsernamePasswordAuthenticationToken(customUserDetails, null, List.of(new SimpleGrantedAuthority("ROLE_"  + role)));
@@ -73,7 +71,7 @@ public class JwtFilter extends OncePerRequestFilter {
                 }
             }
         }
-        //6.
+
         filterChain.doFilter(request, response);
     }
 

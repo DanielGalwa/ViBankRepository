@@ -35,10 +35,7 @@ public class JWTsService {
                 .parseClaimsJws(token)
                 .getBody();
     }
-    
-    //https://stackoverflow.com/questions/77432192/how-can-i-check-a-validate-token-jwt
-    //jest optional bo nie chce by filter łapał każda nieautoryzacje jako wyjątek ,tylko jak nie spełnia to
-    //po prostu bedzie na danym enpoincie unauthorized i tyle
+
     public Optional<Claims> ifFirstPhaseCompletedReturnClaims(String token){
 
         try{
@@ -58,7 +55,6 @@ public class JWTsService {
                 return Optional.empty();
             }
 
-            //rzucony zostanie wyjątek
             jpaUserDetailsService.loadUserByUsername(pid);
 
             if(claims.getExpiration().before(new Date())){

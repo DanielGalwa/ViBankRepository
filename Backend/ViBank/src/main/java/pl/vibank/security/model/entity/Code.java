@@ -19,7 +19,6 @@ public class Code {
 
     private String codeValue;
 
-    //@OneToOne(fetch = FetchType.LAZY)
     @OneToOne
     @JoinColumn(name = "user_id",  nullable = true)
     private User user;

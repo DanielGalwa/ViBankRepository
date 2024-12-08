@@ -71,9 +71,5 @@ public class TwoFactoryService {
             }
         }
         return "Witaj w ViBank";
-
-
-        //tymczasowo
-       // System.out.println(csrfCookie.getValue());
     }
 }
