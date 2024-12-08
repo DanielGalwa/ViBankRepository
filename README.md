@@ -140,7 +140,7 @@ This application is a secure online banking platform that allows users to manage
     **Error Response (403 Forbidden):**
     
     ```json
-    "Proces wylogowania nie powiódł się""
+    "Proces wylogowania nie powiódł się"
     ```
 
 4. `/auth/create-user`
