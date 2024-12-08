@@ -37,3 +37,8 @@ This application is a secure online banking platform that allows users to manage
     - Content Security Policy (CSP)
     - HttpOnly cookies
     - Input and Output Sanitization (Additional, React provides its own mechanisms)
+    
+# Design
+<div align="center">
+  <img src="design.png" alt="Design" />
+</div>
