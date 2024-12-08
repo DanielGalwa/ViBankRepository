@@ -23,3 +23,17 @@ This application is a secure online banking platform that allows users to manage
 <div align="center">
   <img src="architecture.png" alt="Architecture Diagram" />
 </div>
+
+# List of Security Features
+
+- Two Factory Authentication
+- Hashing Passwords
+- CSRF:
+    - Token CSRF
+    - CSRF Token generated using Secure Random
+    - SameSite Strict cookie attribute
+- Bruteforce Password Protection
+- XSS
+    - Content Security Policy (CSP)
+    - HttpOnly cookies
+    - Input and Output Sanitization (Additional, React provides its own mechanisms)
