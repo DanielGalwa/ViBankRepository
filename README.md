@@ -256,7 +256,7 @@ This application is a secure online banking platform that allows users to manage
     
     **Example Request URL:**
     
-    ```
+    ```json
     /transactions?accountNumber=125312345612345678&page=0&size=10
     ```
     
