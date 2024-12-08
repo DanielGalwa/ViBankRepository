@@ -103,7 +103,7 @@ public class AccountService {
         }catch (UniqueValueGenerationException e){
             throw new UniqueValueGenerationException(e.getMessage());
         } catch (Exception e) {
-            throw new IllegalArgumentException("Wprowadzono niepoprawne dane rachunku:", e);
+            throw new IllegalArgumentException("Wprowadzono niepoprawne dane rachunku", e);
         }
 
     }

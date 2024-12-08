@@ -113,7 +113,7 @@ public class AuthService {
 
             return "Wylogowano";
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Proces wylogowania nie powiódł się");
         }
     }
 }
