@@ -4,7 +4,7 @@ This application is a secure online banking platform that allows users to manage
 ## Table of Contents
 - [Technologies](#Technologies)
 - [Setup](#Setup)
-- [GlobalArchitecture](#Global Architecture)
+- [Global Architecture](#Global-Architecture)
 
 # Technologies
 - **Spring Boot**: 3.3.2 version
